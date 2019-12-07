@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const Home = ({ navigation }) => {
+const HomeSwipe = ({ navigation }) => {
   const [cards, setCards] = useState([])
 
   useEffect(() => {
@@ -44,26 +44,18 @@ const Home = ({ navigation }) => {
     )
   }
 
-  const openCard = cardIndex => {
-    navigation.push('CardDetailsScreen', {
-      card: cards[cardIndex],
-      finish: finishCard,
-      giveUp: giveUpCard,
-    })
-  }
-
   return (
     <View style={styles.mainContainer}>
       <StatusBar backgroundColor={'#333'} />
       <CardList
         cardsData={cards}
-        onTapCard={openCard}
-        onSwipeUp={() => {}}
-        onSwipeDown={() => {}}
+        onTapCard={() => {}}
+        onSwipeUp={finishCard}
+        onSwipeDown={giveUpCard}
       />
       <BottomArea />
     </View>
   )
 }
 
-export default Home
+export default HomeSwipe
