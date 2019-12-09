@@ -1,13 +1,13 @@
 {
   "cards": [
     { "id": 1, "text": "Aprenda uma coisa nova." },
-    { "id": 2, "text": "Beba 2 litros de agua." },
+    { "id": 2, "text": "Faça 30 minutos de exercícios." },
     { "id": 3, "text": "Leia 25 paginas de um livro." },
-    { "id": 4, "text": "Aprenda uma coisa nova." },
-    { "id": 5, "text": "Beba 2 litros de agua." },
+    { "id": 4, "text": "Converse com um estranho." },
+    { "id": 5, "text": "Estude por 30 minutos." },
     { "id": 6, "text": "Leia 25 paginas de um livro." },
-    { "id": 7, "text": "Aprenda uma coisa nova." },
-    { "id": 8, "text": "Beba 2 litros de agua." },
-    { "id": 9, "text": "Leia 25 paginas de um livro." }
+    { "id": 7, "text": "Beba 2 litros de água." },
+    { "id": 8, "text": "Vá dormir mais cedo que o normal." },
+    { "id": 9, "text": "Lanse a braba imediatamente." }
   ]
 }

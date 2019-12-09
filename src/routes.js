@@ -1,5 +1,6 @@
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 
 import Main from './pages/Main'
 import TestInstructionScreen from './pages/TestInstructionScreen'
@@ -10,12 +11,14 @@ import CompleteTestScreen from './pages/CompleteTestScreen'
 
 const Routes = createStackNavigator(
   {
-    Main,
-    TestInstructionScreen,
-    Home,
-    CardDetailsScreen,
-    HomeSwipe,
-    CompleteTestScreen,
+    Main: { screen: Main },
+    TestInstructionScreen: {
+      screen: TestInstructionScreen,
+    },
+    Home: { screen: Home },
+    CardDetailsScreen: { screen: CardDetailsScreen },
+    HomeSwipe: { screen: HomeSwipe },
+    CompleteTestScreen: { screen: CompleteTestScreen },
   },
   {
     defaultNavigationOptions: {
