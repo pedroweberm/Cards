@@ -1,0 +1,22 @@
+{
+  "test0": {
+    "introText": "Nesse teste seus objetivos são:\n - Encontrar a carta chamada \"Converse com um estranho\" e marcar como concluída;\n - Encontrar a carta chamada \"Beba 2 litros de água\" e marcar como desistida.",
+    "firstScreen": "Home",
+    "secondScreen": "CompleteTestScreen"
+  },
+  "test1": {
+    "introText": "Nesse teste seus objetivos são:\n - Encontrar a carta chamada \"Converse com um estranho\" e marcar como concluída;\n - Encontrar a carta chamada \"Beba 2 litros de água\" e marcar como desistida.",
+    "firstScreen": "HomeSwipe",
+    "secondScreen": "CompleteTestScreen"
+  },
+  "test2": {
+    "introText": "Nesse teste seus objetivos são:\n - Encontrar a carta chamada \"Converse com um estranho\" e marcar como concluída;\n - Encontrar a carta chamada \"Beba 2 litros de água\" e marcar como desistida.",
+    "firstScreen": "HomeSwipe",
+    "secondScreen": "Home"
+  },
+  "test3": {
+    "introText": "Nesse teste seus objetivos são:\n - Encontrar a carta chamada \"Converse com um estranho\" e marcar como concluída;\n - Encontrar a carta chamada \"Beba 2 litros de água\" e marcar como desistida.",
+    "firstScreen": "Home",
+    "secondScreen": "HomeSwipe"
+  }
+}

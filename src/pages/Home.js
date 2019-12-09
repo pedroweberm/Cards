@@ -15,6 +15,12 @@ const styles = StyleSheet.create({
 
 const Home = ({ navigation }) => {
   const [cards, setCards] = useState([])
+  const [markedCards, setMarkedCards] = useState(1)
+  const nextScreen = navigation.getParam('nextScreen')
+  const testType = navigation.getParam('testType')
+
+  const testInstructions =
+    'Agora, os objetivos serão os mesmos:\n - Encontrar a carta chamada "Converse com um estranho" e marcar como concluída;\n - Encontrar a carta chamada "Beba 2 litros de água" e marcar como desistida.\nMas agora a interação para completar a carta será diferente.'
 
   useEffect(() => {
     setCards(rawCards.cards)
@@ -33,6 +39,23 @@ const Home = ({ navigation }) => {
       ToastAndroid.SHORT,
       ToastAndroid.BOTTOM,
     )
+    setMarkedCards(markedCards + 1)
+    if (markedCards >= 2) {
+      navigation.goBack()
+      if (testType === 0 || testType === 1) {
+        navigation.push(nextScreen, {
+          nextScreen: 'CompleteTestScreen',
+          testType,
+        })
+      } else {
+        navigation.push('TestInstructionScreen', {
+          instructions: testInstructions,
+          firstScreen: nextScreen,
+          secondScreen: 'CompleteTestScreen',
+          testType,
+        })
+      }
+    }
   }
 
   const giveUpCard = id => {
@@ -42,6 +65,23 @@ const Home = ({ navigation }) => {
       ToastAndroid.SHORT,
       ToastAndroid.BOTTOM,
     )
+    setMarkedCards(markedCards + 1)
+    if (markedCards >= 2) {
+      navigation.goBack()
+      if (testType === 0 || testType === 1) {
+        navigation.push(nextScreen, {
+          nextScreen: 'CompleteTestScreen',
+          testType,
+        })
+      } else {
+        navigation.push('TestInstructionScreen', {
+          instructions: testInstructions,
+          firstScreen: nextScreen,
+          secondScreen: 'CompleteTestScreen',
+          testType,
+        })
+      }
+    }
   }
 
   const openCard = cardIndex => {
