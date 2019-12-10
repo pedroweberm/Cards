@@ -8,6 +8,9 @@ import Home from './pages/Home'
 import CardDetailsScreen from './pages/CardDetailsScreen'
 import HomeSwipe from './pages/HomeSwipe'
 import CompleteTestScreen from './pages/CompleteTestScreen'
+import DeckScreen from './pages/DeckScreen'
+import ProfileScreen from './pages/ProfileScreen'
+import GoalsScreen from './pages/GoalsScreen'
 
 const Routes = createStackNavigator(
   {
@@ -19,6 +22,9 @@ const Routes = createStackNavigator(
     CardDetailsScreen: { screen: CardDetailsScreen },
     HomeSwipe: { screen: HomeSwipe },
     CompleteTestScreen: { screen: CompleteTestScreen },
+    DeckScreen: { screen: DeckScreen },
+    ProfileScreen: { screen: ProfileScreen },
+    GoalsScreen: { screen: GoalsScreen },
   },
   {
     defaultNavigationOptions: {

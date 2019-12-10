@@ -1,34 +1,39 @@
 import React from 'react'
+import { StatusBar } from 'react-native'
 
 import styled from 'styled-components'
 
 import Button from '../components/Button'
 
 import testCases from '../assets/testParams.json'
+import { normalize } from '../utils/normalize'
 
 const styles = {
   MainContainer: styled.ScrollView.attrs({
     contentContainerStyle: {
       justifyContent: 'center',
       alignItems: 'center',
+      paddingBottom: normalize(80),
     },
   })`
     flex: 1;
     background: #333;
     flex-direction: column;
-
-    padding: 40px;
+    padding: ${normalize(40)}px ${normalize(40)}px ${normalize(80)}px
+      ${normalize(40)}px;
   `,
   TextContainer: styled.View`
     flex: 2;
-    margin: 10px 0px 20px 0px;
+    margin: ${normalize(10)}px ${normalize(0)}px ${normalize(20)}px
+      ${normalize(0)}px;
   `,
   ButtonContainer: styled.View`
     flex: 1;
-    margin: 10px 0px 10px 0px;
+    margin: ${normalize(10)}px ${normalize(0)}px ${normalize(10)}px
+      ${normalize(0)}px;
   `,
   InstructionText: styled.Text`
-    font-size: 20px;
+    font-size: ${normalize(20)}px;
     color: #b5b5b5;
     text-align: justify;
   `,
@@ -86,6 +91,7 @@ const Main = ({ navigation }) => {
 
   return (
     <MainContainer>
+      <StatusBar backgroundColor={'#333'} />
       <TextContainer>
         <InstructionText>{introText}</InstructionText>
       </TextContainer>

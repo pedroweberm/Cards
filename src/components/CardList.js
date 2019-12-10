@@ -2,21 +2,36 @@ import React, { useState, useRef, useEffect } from 'react'
 import { View, FlatList, StyleSheet } from 'react-native'
 
 import { GestureTypes } from '../utils/gestures'
+import { normalize } from '../utils/normalize'
 
 import Card from './Card'
 
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 3,
-    marginTop: 50,
+    marginTop: normalize(50),
+    overflow: 'visible',
   },
 })
 
-const renderItem = (card, setGesture, index) => {
-  return <Card cardText={card.text} setGesture={setGesture} index={index} />
+const renderItem = (card, setGesture, index, showSwipeIndicator) => {
+  return (
+    <Card
+      cardText={card.text}
+      setGesture={setGesture}
+      index={index}
+      showSwipeIndicator={showSwipeIndicator}
+    />
+  )
 }
 
-const CardList = ({ cardsData, onTapCard, onSwipeUp, onSwipeDown }) => {
+const CardList = ({
+  cardsData,
+  onTapCard,
+  onSwipeUp,
+  onSwipeDown,
+  showSwipeIndicator,
+}) => {
   const [gesture, setGesture] = useState({ code: 0, index: 0 })
   const [activeIndex, setActiveIndex] = useState(0)
   const flatlistRef = useRef(null)
@@ -72,11 +87,15 @@ const CardList = ({ cardsData, onTapCard, onSwipeUp, onSwipeDown }) => {
   return (
     <View style={styles.mainContainer}>
       <FlatList
+        style={{ overflow: 'visible' }}
+        contentContainerStyle={{ overflow: 'visible' }}
         horizontal
         showsHorizontalScrollIndicator={false}
         scrollEnabled={false}
         data={cardsData}
-        renderItem={({ item, index }) => renderItem(item, setGesture, index)}
+        renderItem={({ item, index }) =>
+          renderItem(item, setGesture, index, showSwipeIndicator)
+        }
         keyExtractor={(item, index) => String(index)}
         ref={ref => {
           flatlistRef.current = ref

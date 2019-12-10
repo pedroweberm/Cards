@@ -15,8 +15,7 @@ const styles = {
     flex: 1;
     background: #333;
     flex-direction: column;
-
-    padding: 40px;
+    padding: 40px 40px 80px 40px;
   `,
   TextContainer: styled.View`
     flex: 2;
@@ -54,7 +53,7 @@ const CompleteTestScreen = ({ navigation }) => {
           buttonText={'Responder'}
           onPress={() =>
             Linking.openURL(
-              'https://docs.google.com/forms/d/e/1FAIpQLSdWslCn6nMm_xfVDHASgya06ef3uLU9JeMmdG-EZsEKEvpvFw/viewform?usp=sf_link',
+              'https://docs.google.com/forms/d/e/1FAIpQLSct12B6C_p-OqPJhySPXJq-L2h-8kJUrWg_ZF_nssx3zwrjgQ/viewform?usp=sf_link',
             )
           }
           theme={{

@@ -1,10 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import {View, StyleSheet, TouchableOpacity, Text, Image} from 'react-native';
-import styled from 'styled-components';
+import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native'
+import { withNavigation } from 'react-navigation'
 
-import progressBar from '../assets/progressBar.png';
-import avatar from '../assets/avatar.png';
+import progressBar from '../assets/progressBar.png'
+import avatar from '../assets/avatar.png'
+import { normalize } from '../utils/normalize'
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -43,8 +44,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 8,
     backgroundColor: '#f0f0f0',
-    minWidth: 125,
-    minHeight: 75,
+    minWidth: normalize(125),
+    minHeight: normalize(75),
     borderColor: 'black',
     borderWidth: 1,
   },
@@ -54,47 +55,53 @@ const styles = StyleSheet.create({
   profileButton: {
     borderRadius: 8,
     backgroundColor: '#9e9e9e',
-    minWidth: 200,
-    minHeight: 175,
+    minWidth: normalize(200),
+    minHeight: normalize(175),
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: 'black',
     borderWidth: 1,
   },
   progressBar: {
-    width: 400,
-    height: 100,
-    marginBottom: -40,
-    marginLeft: -20,
+    width: normalize(400),
+    height: normalize(100),
+    marginBottom: normalize(-40),
+    marginLeft: normalize(-20),
   },
   profileIcon: {
-    height: 60,
-    width: 60,
-    marginRight: 15,
+    height: normalize(60),
+    width: normalize(60),
+    marginRight: normalize(15),
   },
   profileInfo: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
     alignSelf: 'stretch',
-    marginLeft: 15,
+    marginLeft: normalize(15),
   },
-});
+})
 
-const BottomArea = () => {
+const BottomArea = ({ navigation }) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.upperContainer}>
         <View style={styles.leftButtons}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('DeckScreen')}>
             <Text style={styles.buttonText}>Decks</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('GoalsScreen')}>
             <Text style={styles.buttonText}>Objetivos</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.profileButtonContainer}>
-          <TouchableOpacity style={styles.profileButton}>
+          <TouchableOpacity
+            style={styles.profileButton}
+            onPress={() => navigation.navigate('ProfileScreen')}>
             <View style={styles.profileInfo}>
               <Image source={avatar} style={styles.profileIcon} />
               <Text style={styles.buttonText}>Perfil</Text>
@@ -106,7 +113,7 @@ const BottomArea = () => {
         <Image source={progressBar} style={styles.progressBar} />
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default BottomArea;
+export default withNavigation(BottomArea)

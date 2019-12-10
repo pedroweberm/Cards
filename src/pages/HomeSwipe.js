@@ -92,6 +92,7 @@ const HomeSwipe = ({ navigation }) => {
         onTapCard={() => {}}
         onSwipeUp={finishCard}
         onSwipeDown={giveUpCard}
+        showSwipeIndicator
       />
       <BottomArea />
     </View>

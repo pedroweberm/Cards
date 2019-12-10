@@ -14,8 +14,7 @@ const styles = {
     flex: 1;
     background: #333;
     flex-direction: column;
-
-    padding: 40px;
+    padding: 40px 40px 80px 40px;
   `,
   TextContainer: styled.View`
     flex: 2;
